@@ -11,10 +11,6 @@ The next phase of development for the Adosia IoT Platform will leverage cryptocu
 <img src='./images/iot_dashboard_1.png' />
 
 
-# Setting Up an IoT Device Profile
-<img src='./images/iot_dashboard_2.png' />
-
-
 
 # How to Connect IoT Hardware to the Adosia IoT Platform
 
@@ -36,6 +32,12 @@ Compatible open hardware boards flashed using Adosia's open source [phoenix conn
 The schematics and layout files for Adosia's open hardware SPACE v2.2 IO board (compatible with WEMOS D1 R2 WiFi baseboard) can be found [here](https://github.com/adosia/adosia-iot/tree/master/SPACE_v2.2/hardware/IO_BOARD_WEMOS_D1R2)
 
 Adosia will publish manufacturing schematics and layout files for an IO board compatible with the WEMOS D1 Mini baseboard in the near future.
+
+
+
+# Setting Up an IoT Device Profile
+<img src='./images/iot_dashboard_2.png' />
+<img src='./images/iot_dashboard_3.png' />
 
 
 
