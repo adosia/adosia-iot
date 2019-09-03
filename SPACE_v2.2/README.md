@@ -1,16 +1,17 @@
-# Adosia SPACE IO Shield v2.2 - [Buy Adosia IoT Hardware](https://adosia.io)
+# Adosia SPACE IO Shield - [Buy Adosia IoT Hardware](https://adosia.io)
 
-Adosia SPACE v2.2 is part of Adosia's open hardware IO platform initiative to enable anyone to easily create a variety of custom WiFi control systems using the Adosia IoT Platform.
+Adosia SPACE IO boards are part of Adosia's open hardware IO platform initiative to enable anyone to easily create a variety of custom WiFi control systems using the Adosia IoT Platform.
 
-The SPACE v2.2 IO shield is designed to be pin compatible with the popular open hardware Arduino Uno R3 and WEMOS D1R2 WiFi controller boards.
+The SPACE IO shield is designed to be pin compatible with the popular open hardware Arduino Uno R3 and WEMOS D1 R2 WiFi controller boards.
 
-The default open source software to connect your ESP8266-based SPACE v2.2 IO hardware
-(compatible with WEMOS D1R2 or WEMOS D1 Mini) to the Adosia IoT Platform and download the latest Adosia binary can be found
-[here](https://github.com/adosia/adosia-token/tree/master/hardware/bluponix/space_v2.2/sample_code/).
+Use the Arduino IDE and Adosia's open source [phoenix connect script](https://github.com/adosia/adosia-iot/tree/master/SPACE_v2.2/adosia_phoenix) to connect your ESP8266-based SPACE IO hardware
+(compatible with WEMOS D1 R2 or WEMOS D1 Mini) to the Adosia IoT Platform which automatically downloads the latest Adosia binary.
 
 
-# SPACE v2.2 for WEMOS D1R2 (WEMOS D1 Mini coming soon)
+# SPACE for WEMOS D1 R2
 <img src='./images/space2.2-full.png' />
+
+* SPACE for the WEMOS D1 Mini coming soon
 
 
 # Adosia SPACE v2.2 IO Board Features (WEMOS D1R2):
@@ -35,13 +36,13 @@ The default open source software to connect your ESP8266-based SPACE v2.2 IO har
 
 - gardening / hydroponics / aquaponics
 
-- motion detect applications
+- motion detect sentry and alarm applications
 
 - personal cultivation feeder control systems
 
 - refill water reservoir on detecting low water
 
-- tamper alarms
+- custom tamper alarms
 
 - digital lock applications
 
