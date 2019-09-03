@@ -2,8 +2,6 @@
 
 <img src='./images/adosia-icon-200.png' />
 
-This repository contains source, design concepts, usage implementations and future initiatives pertinent to the Adosia IoT Platform.
-
 The Adosia IoT Platform is a free cloud based tool paired with an open hardware initiative that enables anyone to create, customize, deploy and manage custom WiFi control systems using supported open IoT WiFi hardware.
 
 The next phase of development for the Adosia IoT Platform will leverage cryptocurrency to enable Adosia users with a peer-to-peer marketplace to sell/license their IoT creations to other Adosia users.
