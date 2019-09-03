@@ -4,14 +4,16 @@ Adosia SPACE v2.2 is part of Adosia's open hardware IO platform initiative to en
 
 The SPACE v2.2 IO shield is designed to be pin compatible with the popular open hardware Arduino Uno R3 and WEMOS D1R2 WiFi controller boards.
 
-The default open source software to connect your ESP8266-based SPACE v2.2 IO hardware (compatible with WEMOS D1R2 or WEMOS D1 Mini) to the Adosia IoT Platform and download the latest Adosia binary can be found [here](https://github.com/adosia/adosia-token/tree/master/hardware/bluponix/space_v2.2/sample_code/).
+The default open source software to connect your ESP8266-based SPACE v2.2 IO hardware
+(compatible with WEMOS D1R2 or WEMOS D1 Mini) to the Adosia IoT Platform and download the latest Adosia binary can be found
+[here](https://github.com/adosia/adosia-token/tree/master/hardware/bluponix/space_v2.2/sample_code/).
 
 
 # SPACE v2.2 for WEMOS D1R2 (WEMOS D1 Mini coming soon)
 <img src='./images/space2.2-full.png' />
 
 
-# Adosia SPACE v2.2 IO Board Features (WEMOS D2R2):
+# Adosia SPACE v2.2 IO Board Features (WEMOS D1R2):
 
 - x2 diode-protected transistor switch channels to safely drive pumps or solenoids
 
@@ -51,14 +53,13 @@ The default open source software to connect your ESP8266-based SPACE v2.2 IO har
 
 
 
-*WEMOS D2R2 recommended supply voltage Vin = 12V
+*WEMOS D1R2 recommended supply voltage Vin = 12V
 
 *transistor/diode switch channels can drive up to 450mA at supply voltage Vin
 
 *relays trigger on programmatic LOW
 
 
-<img src='./images/space2.2-pinout.png' />
 <img src='./images/space2.2-relay.png' />
 
 
