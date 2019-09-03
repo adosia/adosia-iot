@@ -1,8 +1,8 @@
 # Adosia Phoenix Connect Script for SPACE v2.2
 
-Flash the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/SPACE_v2.2/adosia_phoenix/adosia_phoenix.ino) script to your ESP8266-based WEMOS D1 R2 or WEMOS D1 Mini WiFi baseboards to automatically download the latest Adosia binary to ready your own WiFi hardware for connecting to the Adosia IoT platform.
+Flash the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/SPACE_v2.2/adosia_phoenix/adosia_phoenix.ino) script to your ESP8266-based **WEMOS D1 R2* or **WEMOS D1 Mini** WiFi baseboards to automatically download the latest Adosia binary to ready your own WiFi hardware for connecting to the Adosia IoT platform.
 
-Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary from [Adosia IoT Store](https://adosia.io)
+Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary from the [Adosia IoT Store](https://adosia.io)
 
 
 # Steps to Download the Latest Adosia Binary

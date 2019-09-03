@@ -2,7 +2,7 @@
 
 <img src='./images/adosia-icon-200.png' />
 
-The Adosia IoT Platform is a free cloud based tool paired with an open hardware initiative that enables anyone to create, customize, deploy and manage custom WiFi control systems using supported open IoT WiFi hardware.
+The **Adosia IoT Platform** is a free cloud based tool paired with an open hardware initiative that enables anyone to create, customize, deploy and manage custom WiFi control systems using supported open IoT WiFi hardware.
 
 The next phase of development for the Adosia IoT Platform will leverage cryptocurrency to enable Adosia users with a peer-to-peer marketplace to sell/license their IoT creations to other Adosia users.
 
@@ -14,17 +14,17 @@ The next phase of development for the Adosia IoT Platform will leverage cryptocu
 
 # How to Connect IoT Hardware to the Adosia IoT Platform
 
-1. Sign Up FREE for the [Adosia IoT Platform](https://adosia.com)
+**1. Sign Up FREE for the [Adosia IoT Platform](https://adosia.com)**
 
 
-2. Obtain compatible IoT hardware pre-flashed with the latest Adosia binary by either:
+**2. Obtain compatible IoT hardware pre-flashed with the latest Adosia binary by either:**
 
   - purchasing a WEMOS WiFi baseboard pre-flashed with the Adosia binary (along with optional [Adosia SPACE IO board](https://adosia.io/product/adosia-iot-space-io-board-shield/)) from the [Adosia IoT Store](https://adosia.io)
  
   - or you can use the popular Arduino IDE to download by latest Adosia binary by flashing your own WEMOS WiFi baseboard with Adosia's open source [phoenix connect script](https://github.com/adosia/adosia-iot/tree/master/SPACE_v2.2/adosia_phoenix)
 
 
-3. Use a mobile device to connect your IoT hardware to the Adosia IoT Platform (see [Adosia Learn Page](https://adosia.com/faq))
+**3. Use a mobile device to connect your IoT hardware to the Adosia IoT Platform (see [Adosia Learn Page](https://adosia.com/faq))**
   
 
 Compatible open hardware boards flashed using Adosia's open source [phoenix connect script](https://github.com/adosia/adosia-iot/tree/master/SPACE_v2.2/adosia_phoenix) and the Arduino IDE will automatically connect to Adosia servers to download the latest Adosia binary.
