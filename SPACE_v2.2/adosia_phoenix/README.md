@@ -1,6 +1,6 @@
 # Adosia Phoenix Connect Script for SPACE v2.2
 
-Flash the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/SPACE_v2.2/adosia_phoenix/adosia_phoenix.ino) script to your ESP8266-based WEMOS D1R2 or WEMOS D1 Mini WiFi baseboards to automatically download the latest Adosia binary to ready your own WiFi hardware for connecting to the Adosia IoT platform.
+Flash the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/SPACE_v2.2/adosia_phoenix/adosia_phoenix.ino) script to your ESP8266-based WEMOS D1 R2 or WEMOS D1 Mini WiFi baseboards to automatically download the latest Adosia binary to ready your own WiFi hardware for connecting to the Adosia IoT platform.
 
 Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary from [Adosia IoT Store](https://adosia.io)
 
@@ -18,4 +18,6 @@ Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary 
 5. When the upload completes, reset your board (recycle power) so the OTA update will take effect and download the latest binary from Adosia servers
 
 
-If using an Adosia SPACE IO board, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been succesfully downloaded.
+If using an Adosia SPACE IO board, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded.
+
+*if your Arduino IDE doesn't recognize your board when you connect the USB cable you may need to [download the CH340 driver](https://wiki.wemos.cc/downloads)
