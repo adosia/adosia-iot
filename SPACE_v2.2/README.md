@@ -54,7 +54,7 @@ Use the Arduino IDE and Adosia's open source [phoenix connect script](https://gi
 
 
 
-*WEMOS D1 R2 recommended supply voltage Vin = 12V*
+*recommended supply voltage for WEMOS D1 R2 with the Adosia IoT Platform: Vin = 12V*
 
 *transistor/diode switch channels can drive up to 450mA at supply voltage Vin*
 
