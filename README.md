@@ -9,11 +9,11 @@ The Adosia IoT Platform is a free cloud based tool paired with an open hardware 
 The next phase of development for the Adosia IoT Platform will leverage cryptocurrency to enable Adosia users with a peer-to-peer marketplace to sell/license their IoT creations to other Adosia users.
 
 
-Connected IoT Devices - Dashboard View
+# Dashboard View - Connected IoT Devices
 <img src='./images/iot_dashboard_1.png' />
 
 
-Setting Up an IoT Device Profile
+# Setting Up an IoT Device Profile
 <img src='./images/iot_dashboard_2.png' />
 
 
