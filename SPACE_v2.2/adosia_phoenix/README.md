@@ -5,7 +5,7 @@ Flash the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/
 Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary from [Adosia IoT Store](https://adosia.io)
 
 
-# Steps to Download the Latest Adosia Binary using 
+# Steps to Download the Latest Adosia Binary
 
 1. Copy and paste the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/SPACE_v2.2/adosia_phoenix/adosia_phoenix.ino) sketch into your Arduino IDE
 
@@ -18,6 +18,6 @@ Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary 
 5. When the upload completes, reset your board (recycle power) so the OTA update will take effect and download the latest binary from Adosia servers
 
 
-If using an Adosia SPACE IO board, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded.
+If using an Adosia SPACE IO board, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded.  The board should now be ready to connect to the Adosia IoT Platform just as if you purchased it from the [Adosia IoT Store](https://adosia.io)
 
-*if your Arduino IDE doesn't recognize your board when you connect the USB cable you may need to [download the CH340 driver](https://wiki.wemos.cc/downloads)
+*if the Arduino IDE doesn't recognize your board, you may need to [download the CH340 driver](https://wiki.wemos.cc/downloads)
