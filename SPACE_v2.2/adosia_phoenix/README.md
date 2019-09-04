@@ -9,9 +9,10 @@ Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary 
 
 1. Copy and paste the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/SPACE_v2.2/adosia_phoenix/adosia_phoenix.ino) sketch into your Arduino IDE
 
-2. Make sure your IDE settings are set to Board *WeMos D1 R2 & mini*, **Flash Size** *4M (3M spiffs)*, and **Upload Speed** of *115200 baud*
+2. Make sure your IDE settings are set to **Board** *WeMos D1 R2 & mini*, **Flash Size** *4M (3M spiffs)*, and **Upload Speed** of *115200 baud*
 
-3. Update lines 10 and 11 respectively with the Network SSID and Password for your WiFi Network (this information is not transmitted to Adosia servers)
+3. Update **lines 10 and 11** respectively with the **Network SSID** and **Password** for your WiFi Network
+*WiFi login credentials are never transmitted to Adosia servers*
 
 4. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware
 
