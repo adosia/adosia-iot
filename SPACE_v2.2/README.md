@@ -4,7 +4,7 @@ Adosia SPACE IO boards are part of Adosia's open hardware IO platform initiative
 
 The SPACE IO shield is designed to be pin compatible with the popular open hardware **Arduino Uno R3** and **WEMOS D1 R2 WiFi** controller boards.
 
-Use the Arduino IDE and Adosia's open source [phoenix connect script](https://github.com/adosia/adosia-iot/tree/master/SPACE_v2.2/adosia_phoenix) to connect your ESP8266-based SPACE IO hardware
+Use the Arduino IDE and Adosia's open source [phoenix connect script](https://github.com/adosia/adosia-iot/tree/master/adosia_phoenix) to connect your ESP8266-based SPACE IO hardware
 (compatible with WEMOS D1 R2 or WEMOS D1 Mini) to the Adosia IoT Platform which automatically downloads the latest Adosia binary.
 
 
