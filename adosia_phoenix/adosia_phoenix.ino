@@ -7,8 +7,9 @@
 const String iot_prefix         =   "space_v2-2_fwv";
 const String swVersion          =   "x";
 
-const char* ssid                =   "myWiFiNetworkSSID";      // enter WiFI Network SSID here
-const char* password            =   "myWiFiNetworkPassword";  // enter WiFI Network password here
+//const char* ssid                =   "myWiFiNetworkSSID";      // enter WiFI Network SSID here
+//const char* password            =   "myWiFiNetworkPassword";  // enter WiFI Network password here
+
 String binary_updatefile        =   "";
 
 const bool DEBUG_start          =   true;
@@ -180,6 +181,7 @@ bool update_device() {
         digitalWrite(0,HIGH);
         digitalWrite(2,HIGH);
         digitalWrite(15,LOW);
+        USE_SERIAL.println("*ADO - updated binary available");
         upd_result = true;
         break;
     }
@@ -205,21 +207,18 @@ void DEBUG_ADO(bool start, bool prntln, String text) {
 
 void setup() {
 
-  pinMode(LEDb, OUTPUT);          // STATIC OUTPUT
-  pinMode(LEDg, OUTPUT);          // STATIC OUTPUT
-  pinMode(LEDr, OUTPUT);          // STATIC OUTPUT
+  pinMode(LEDb, OUTPUT);                      // LED pins => static output
+  pinMode(LEDg, OUTPUT);          
+  pinMode(LEDr, OUTPUT);          
 
-  digitalWrite(LEDb, LOW);
-  digitalWrite(LEDg, LOW);
-  digitalWrite(LEDr, LOW);
-  
-  delay(100);                     // let's kick it for a bit
+  led_dark();                                 // set the mood
+  delay(100);                                 // let's kick it for a bit
 
   USE_SERIAL.begin(115200);
   while (!USE_SERIAL) { ; /* wait */ }
   
-  led_set(0, 0, 0);                                         // set LED to green to indicate device starting up
-  dmac.replace(":", "");                                    // remove colons from device mac address String
+  led_set(0, 0, 0);                           // set LED to green to indicate device starting up
+  dmac.replace(":", "");                      // remove colons from device mac address String
 
   
   WiFi.begin(ssid, password);
@@ -235,8 +234,8 @@ void setup() {
   USE_SERIAL.println("IP address: ");
   USE_SERIAL.println(WiFi.localIP());
     
-  led_blink(LEDg, 250, 10);
-  check_for_update();               // check to see if there is an update available, and update if so
+  led_blink(LEDg, 250, 10);                   // indicate connection
+  check_for_update();                         // check if update is available and update if appropriate
 
 }
 
@@ -244,6 +243,6 @@ void setup() {
 
 void loop() {
 
-  delay(loop_delay);    // wait 100ms for production (need to run a tight loop for polling control)
+  delay(loop_delay);                          // wait 100ms for production (run tight loop for polling control)
 
 }
