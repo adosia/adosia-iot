@@ -7,8 +7,8 @@
 const String iot_prefix         =   "space_v2-2_fwv";
 const String swVersion          =   "x";
 
-//const char* ssid                =   "myWiFiNetworkSSID";      // enter WiFI Network SSID here
-//const char* password            =   "myWiFiNetworkPassword";  // enter WiFI Network password here
+const char* ssid                =   "myWiFiNetworkSSID";      // enter WiFI Network SSID here
+const char* password            =   "myWiFiNetworkPassword";  // enter WiFI Network password here
 
 String binary_updatefile        =   "";
 
