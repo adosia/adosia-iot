@@ -235,7 +235,7 @@ void setup() {
   USE_SERIAL.println("IP address: ");
   USE_SERIAL.println(WiFi.localIP());
     
-  led_blink(LEDg, 250, 10);                   // undicate connection
+  led_blink(LEDg, 250, 10);                   // indicate connection
   check_for_update();                         // check if update is available and update if appropriate
 
 }
