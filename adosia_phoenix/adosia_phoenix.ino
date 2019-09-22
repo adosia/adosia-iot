@@ -9,8 +9,7 @@ const String swVersion          =   "x";
 
 //const char* ssid                =   "myWiFiNetworkSSID";      // enter WiFI Network SSID here
 //const char* password            =   "myWiFiNetworkPassword";  // enter WiFI Network password here
-const char* ssid                =   "hug2g548534";      // enter WiFI Network SSID here
-const char* password            =   "bell04roll";  // enter WiFI Network password here
+
 String binary_updatefile        =   "";
 
 const bool DEBUG_start          =   true;
