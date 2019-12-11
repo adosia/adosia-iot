@@ -1,7 +1,10 @@
-#include <ESP8266WiFi.h>          // https://github.com/esp8266/Arduino - ESP8266 Core WiFi Library
-#include <WiFiClientSecure.h>     // https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266WiFi/examples/HTTPSRequest/HTTPSRequest.ino
+#include <ESP8266WiFi.h>          // https://github.com/esp8266/Arduino - ESP8266 Core WiFi Library=
+#include <ESP8266HTTPClient.h>
 #include <ESP8266httpUpdate.h>    // https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266httpUpdate - enable remote firmware updates from web server via http protocol
+#include <time.h>
+
 #define USE_SERIAL Serial
+
 
 // initialize hardware device
 const String iot_prefix         =   "space_v2-2_fwv";
@@ -9,7 +12,6 @@ const String swVersion          =   "x";
 
 const char* ssid                =   "myWiFiNetworkSSID";      // enter WiFI Network SSID here
 const char* password            =   "myWiFiNetworkPassword";  // enter WiFI Network password here
-
 String binary_updatefile        =   "";
 
 const bool DEBUG_start          =   true;
@@ -26,6 +28,38 @@ const int LEDb                 = 2;        // B3 blue led output
 bool update_available          = false;
 bool update_result             = false;
 int loop_delay                 = 1000;
+
+BearSSL::WiFiClientSecure client;
+
+const char ca_cert[] PROGMEM = R"EOF(
+-----BEGIN CERTIFICATE-----
+MIIEkjCCA3qgAwIBAgIQCgFBQgAAAVOFc2oLheynCDANBgkqhkiG9w0BAQsFADA/
+MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+DkRTVCBSb290IENBIFgzMB4XDTE2MDMxNzE2NDA0NloXDTIxMDMxNzE2NDA0Nlow
+SjELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUxldCdzIEVuY3J5cHQxIzAhBgNVBAMT
+GkxldCdzIEVuY3J5cHQgQXV0aG9yaXR5IFgzMIIBIjANBgkqhkiG9w0BAQEFAAOC
+AQ8AMIIBCgKCAQEAnNMM8FrlLke3cl03g7NoYzDq1zUmGSXhvb418XCSL7e4S0EF
+q6meNQhY7LEqxGiHC6PjdeTm86dicbp5gWAf15Gan/PQeGdxyGkOlZHP/uaZ6WA8
+SMx+yk13EiSdRxta67nsHjcAHJyse6cF6s5K671B5TaYucv9bTyWaN8jKkKQDIZ0
+Z8h/pZq4UmEUEz9l6YKHy9v6Dlb2honzhT+Xhq+w3Brvaw2VFn3EK6BlspkENnWA
+a6xK8xuQSXgvopZPKiAlKQTGdMDQMc2PMTiVFrqoM7hD8bEfwzB/onkxEz0tNvjj
+/PIzark5McWvxI0NHWQWM6r6hCm21AvA2H3DkwIDAQABo4IBfTCCAXkwEgYDVR0T
+AQH/BAgwBgEB/wIBADAOBgNVHQ8BAf8EBAMCAYYwfwYIKwYBBQUHAQEEczBxMDIG
+CCsGAQUFBzABhiZodHRwOi8vaXNyZy50cnVzdGlkLm9jc3AuaWRlbnRydXN0LmNv
+bTA7BggrBgEFBQcwAoYvaHR0cDovL2FwcHMuaWRlbnRydXN0LmNvbS9yb290cy9k
+c3Ryb290Y2F4My5wN2MwHwYDVR0jBBgwFoAUxKexpHsscfrb4UuQdf/EFWCFiRAw
+VAYDVR0gBE0wSzAIBgZngQwBAgEwPwYLKwYBBAGC3xMBAQEwMDAuBggrBgEFBQcC
+ARYiaHR0cDovL2Nwcy5yb290LXgxLmxldHNlbmNyeXB0Lm9yZzA8BgNVHR8ENTAz
+MDGgL6AthitodHRwOi8vY3JsLmlkZW50cnVzdC5jb20vRFNUUk9PVENBWDNDUkwu
+Y3JsMB0GA1UdDgQWBBSoSmpjBH3duubRObemRWXv86jsoTANBgkqhkiG9w0BAQsF
+AAOCAQEA3TPXEfNjWDjdGBX7CVW+dla5cEilaUcne8IkCJLxWh9KEik3JHRRHGJo
+uM2VcGfl96S8TihRzZvoroed6ti6WqEBmtzw3Wodatg+VyOeph4EYpr/1wXKtx8/
+wApIvJSwtmVi4MFU5aMqrSDE6ea73Mj2tcMyo5jMd6jmeWUHK8so/joWUoHOUgwu
+X4Po1QYz+3dszkDqMp4fklxBwXRsW10KXzPMTZ+sOPAveyxindmjkW8lGy+QsRlG
+PfZ+G6Z6h7mjem0Y+iWlkYcV4PIWL1iwBi8saCbGS5jN2p8M+X+Q7UNKEkROb3N6
+KOqkqm57TH2H3eDJAkSnh6/DNFu0Qg==
+-----END CERTIFICATE-----
+)EOF";
 
 
 void led_dark() {
@@ -56,18 +90,46 @@ void led_blink(int led, int bdelay, int btimes) {
   
 }
 
+// Set time via NTP, as required for x.509 validation
+void setClock() {
+  configTime(0, 0, "pool.ntp.org", "time.nist.gov");  // UTC
+
+  USE_SERIAL.print(F("*ADO: waiting for NTP time sync "));
+  time_t now = time(nullptr);
+  while (now < 8 * 3600 * 2) {
+    yield();
+    delay(500);
+    USE_SERIAL.print(F("."));
+    now = time(nullptr);
+  }
+
+  USE_SERIAL.println(F(""));
+  struct tm timeinfo;
+  gmtime_r(&now, &timeinfo);
+  USE_SERIAL.print(F("*ADO: current time: "));
+  USE_SERIAL.print(asctime(&timeinfo));
+}
 
 
-bool arise(char action) {
 
-  ESP.wdtFeed();
-  WiFiClientSecure client;
+void arise(char action) {
 
+  ESP.wdtFeed();      // feed the dog
+
+  bool mfln = client.probeMaxFragmentLength("adosia.com", 443, 1024);  // server must be the same as in ESPhttpUpdate.update()
+  USE_SERIAL.printf("*ADO: MFLN supported: %s\n", mfln ? "yes" : "no");
+  if (mfln) {
+    client.setBufferSizes(1024, 1024);
+  }
+
+  // Require a certificate validated by the trusted CA
+  BearSSL::X509List *serverTrustedCA = new BearSSL::X509List(ca_cert);
+  client.setTrustAnchors(serverTrustedCA);
   
   if (!client.connect(host, httpsPort)) {
-    
-    DEBUG_ADO(DEBUG_start, DEBUG_prntln, "connection failed");
-    return false;
+    DEBUG_ADO(DEBUG_start, DEBUG_prntln, "connection failed...");
+    DEBUG_ADO(DEBUG_start, DEBUG_prntln, "bad internet or invalid SSL CA");
+    return;
   }
 
   
@@ -83,7 +145,7 @@ bool arise(char action) {
                "Adosia-IoT-Version: " + swVersion +"\r\n" +
                "Connection: close\r\n\r\n");
 
-    DEBUG_ADO(DEBUG_start, DEBUG_prntln, "update request sent");
+    DEBUG_ADO(DEBUG_start, DEBUG_prntln, "https update request sent");
     
     while (client.connected()) {
       
@@ -94,15 +156,13 @@ bool arise(char action) {
         DEBUG_ADO(DEBUG_start, DEBUG_prntln, line);
       }
       if (line == "\r") {
-        DEBUG_ADO(DEBUG_start, DEBUG_prntln, "update response:");
+        DEBUG_ADO(DEBUG_start, DEBUG_prnt, "response payload: ");
         break;
       }
     }
     
     // next line will be payload
     String line = client.readStringUntil('\n');
-
-    DEBUG_ADO(DEBUG_start, DEBUG_prnt, "response payload: ");      // print it on serial monitor
     DEBUG_ADO(DEBUG_cont, DEBUG_prntln, line);
 
     // ok we got something back decent
@@ -111,44 +171,24 @@ bool arise(char action) {
       line.replace("IOT-BIN:", "");
 
       if (line == "none" || line == "error-invalid-mac" || line == "error-file-does-not-exist" || line == "error-phoenix-fallen") {
-        return false;
+        // update failed
+        DEBUG_ADO(DEBUG_start, DEBUG_prntln, "phoenix burn - no target file received");
+        led_blink(LEDr, 250, 6);
+        led_set(255, 0, 0);
       }
-
+ 
       else {
+
         binary_updatefile = line;
-        return true;
+        DEBUG_ADO(DEBUG_start, DEBUG_prntln, "phoenix rising...");
+        
+        bool update_status = update_device();
+        
       }
       
     }
     
   }
-  
-
-  return false;
-}
-
-
-void check_for_update() {
-  
-  update_available = arise('u');
-  
-  if (update_available) {
-        
-    bool update_result = update_device();
-
-    if (update_result) {
-      
-      led_blink(LEDb, 250, 6);
-      led_set(0, 0, 255);
-      delay(3000);
-      ESP.restart();
-    }
-  
-  }
-
-  // update failed
-  led_blink(LEDr, 250, 6);
-  led_set(255, 0, 0);
   
 }
 
@@ -157,31 +197,30 @@ void check_for_update() {
 bool update_device() {
   
     bool upd_result = false;
-
+    
     // update software binary
-    String phoenix_rise_url = "http://adosia.com/iotbin/" + binary_updatefile;
-    t_httpUpdate_return ret = ESPhttpUpdate.update(phoenix_rise_url, swVersion);
+    String phoenix_rise_url = "https://adosia.com/iotbin/" + binary_updatefile;
+    t_httpUpdate_return ret = ESPhttpUpdate.update(client, phoenix_rise_url);
     delay(100);
 
     switch (ret) {
       
       case HTTP_UPDATE_FAILED:
-        USE_SERIAL.printf("*ADO: HTTP_UPDATE_FAILED Error (%d): %s", ESPhttpUpdate.getLastError(), ESPhttpUpdate.getLastErrorString().c_str());
+        USE_SERIAL.printf("*ADO: secure update failed - error (%d): %s", ESPhttpUpdate.getLastError(), ESPhttpUpdate.getLastErrorString().c_str());
         USE_SERIAL.println();
         upd_result = false;
         break;
 
       case HTTP_UPDATE_NO_UPDATES:
-        //DEBUG_ADO(DEBUG_start, DEBUG_prntln, "HTTP_UPDATE_NO_UPDATES");
+        DEBUG_ADO(DEBUG_start, DEBUG_prntln, "update failed - no updates");
         upd_result = false;
         break;
 
       case HTTP_UPDATE_OK:
-        //DEBUG_ADO(DEBUG_start, DEBUG_prntln, "HTTP_UPDATE_OK");
+        DEBUG_ADO(DEBUG_start, DEBUG_prntln, "phoenix risen");
         digitalWrite(0,HIGH);
         digitalWrite(2,HIGH);
         digitalWrite(15,LOW);
-        USE_SERIAL.println("*ADO - updated binary available");
         upd_result = true;
         break;
     }
@@ -207,35 +246,43 @@ void DEBUG_ADO(bool start, bool prntln, String text) {
 
 void setup() {
 
-  pinMode(LEDb, OUTPUT);                      // LED pins => static output
-  pinMode(LEDg, OUTPUT);          
-  pinMode(LEDr, OUTPUT);          
+  pinMode(LEDb, OUTPUT);          // STATIC OUTPUT
+  pinMode(LEDg, OUTPUT);          // STATIC OUTPUT
+  pinMode(LEDr, OUTPUT);          // STATIC OUTPUT
 
-  led_dark();                                 // set the mood
-  delay(100);                                 // let's kick it for a bit
+  digitalWrite(LEDb, LOW);
+  digitalWrite(LEDg, LOW);
+  digitalWrite(LEDr, LOW);
+  
+  delay(100);                     // let's kick it for a bit
 
   USE_SERIAL.begin(115200);
   while (!USE_SERIAL) { ; /* wait */ }
   
-  led_set(0, 0, 0);                           // set LED to green to indicate device starting up
-  dmac.replace(":", "");                      // remove colons from device mac address String
+  led_set(0, 0, 0);                                         // set LED to green to indicate device starting up
+  dmac.replace(":", "");                                    // remove colons from device mac address String
 
   
   WiFi.begin(ssid, password);
+
+  USE_SERIAL.println("");
+  DEBUG_ADO(DEBUG_start, DEBUG_prnt, "connecting to WiFi ");
   
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     USE_SERIAL.print(".");
   }
 
-  
   USE_SERIAL.println("");
-  USE_SERIAL.println("WiFi connected");  
-  USE_SERIAL.println("IP address: ");
+  DEBUG_ADO(DEBUG_start, DEBUG_prntln, "WiFi connected");
+  USE_SERIAL.print("*ADO: IP address: ");
   USE_SERIAL.println(WiFi.localIP());
-    
-  led_blink(LEDg, 250, 10);                   // indicate connection
-  check_for_update();                         // check if update is available and update if appropriate
+  
+  led_blink(LEDg, 250, 10);     // WiFi connected
+  
+  setClock();
+ 
+  arise('u');                   // check to see if there is an update available, and update if so
 
 }
 
@@ -243,6 +290,6 @@ void setup() {
 
 void loop() {
 
-  delay(loop_delay);                          // wait 100ms for production (run tight loop for polling control)
+  delay(loop_delay);    // wait 100ms for production (need to run a tight loop for polling control)
 
 }
