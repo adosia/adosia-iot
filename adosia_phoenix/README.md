@@ -28,4 +28,4 @@ If using an Adosia SPACE IO board, the onboard LED will blink green 10 times onc
 
 # iot_prefix value to set based on Adosia IO Board
 
- - SPACE (or no IO board) => update iot_prefix on line 7 to **space_v2-2_fwv**
+ - SPACE (or no IO board) => update iot_prefix on line 10 to **space_v2-2_fwv**
