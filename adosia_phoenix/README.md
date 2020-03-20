@@ -13,7 +13,7 @@ Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary 
 
 3. Make sure **line 7** has the correct **iot_prefix** for the IO board you are using (default is **space_v2-2_fwv**)
 
-4. Update **lines 10 and 11** respectively with the **Network SSID** and **Password** for your WiFi Network (*WiFi login credentials are never transmitted to Adosia servers*)
+4. Update **lines 13 and 14** respectively with the **Network SSID** and **Password** for your WiFi Network (*WiFi login credentials are never transmitted to Adosia servers*)
 
 5. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware
 
