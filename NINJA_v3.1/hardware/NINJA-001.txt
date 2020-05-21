@@ -1,0 +1,21 @@
+Partlist exported from /Users/adosiadev2/Documents/eagle/RAIN-001/RAIN-001.sch at 6/24/18 2:32 AM
+
+Part Value       Device                Package       Description                             MANUFACTURER_PART_NUMBER MF MPN OC_FARNELL OC_NEWARK PROD_ID   VALUE      VENDOR           
+C1   0.1uF       0.1UF-0603-25V-5%     0603          0.1µF ceramic capacitors                                                                     CAP-08604 0.1uF                       
+C2   4.7uF       4.7UF0603             0603          4.7µF ceramic capacitors                                                                     CAP-08280 4.7uF                       
+C3   1.0uF       1.0UF-0603-16V-10%    0603          1µF ceramic capacitors                                                                       CAP-00868 1.0uF                       
+C4   0.1uF       0.1UF-0603-25V-5%     0603          0.1µF ceramic capacitors                                                                     CAP-08604 0.1uF                       
+C5   470pF       470PF-0603-50V-5%     0603          470pF ceramic capacitors                                                                     CAP-07884 470pF                       
+C6   0.1uF       0.1UF-0603-25V-5%     0603          0.1µF ceramic capacitors                                                                     CAP-08604 0.1uF                       
+C7   10nF        10NF-0603-50V-10%     0603          0.01uF/10nF/10,000pF ceramic capacitors                                                      CAP-00867 10nF                        
+C8   4.7uF       4.7UF0603             0603          4.7µF ceramic capacitors                                                                     CAP-08280 4.7uF                       
+D1   1N4148WS    DIODE-BAS16J          SOD-323       Diode                                                                                        DIO-09646 250mA/100V                  
+FD1  FIDUCIAL1X2 FIDUCIAL1X2           FIDUCIAL-1X2  Fiducial Alignment Points                                                                                                          
+FD2  FIDUCIAL1X2 FIDUCIAL1X2           FIDUCIAL-1X2  Fiducial Alignment Points                                                                                                          
+J1   SIP3        MPT3                  3POL254       PHOENIX CONNECTOR                                                       unknown    unknown                                         
+P1   XC6206P302  XC6206SOT-23          XC6206_SOT-23 XC6206P  , linear regulator.                                                                                                       
+R1   1M          1MOHM-0603-1/4W-5%    0603          1MΩ resistor                                                                                 RES-07868 1M                          
+R2   10k         10KOHM-0603-1/10W-1%  0603          10kΩ resistor                                                                                RES-00824 10k                         
+R3   330         330OHM-0603-1/10W-1%  0603          330Ω resistor                                                                                RES-00818 330                         
+R4   1.6k        1.6KOHM-0603-1/10W-1% 0603          1.6kΩ resistor                                                                               RES-08361 1.6k                        
+U1   TLC555CDR   TLC555CDR             D8                                                    TLC555CDR                                                                 Texas Instruments
