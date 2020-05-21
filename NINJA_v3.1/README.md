@@ -40,7 +40,7 @@ The Adosia NINJA sensor is designed to be compatible with popular open hardware 
 
 
 
-Navigate the hardware subdirectory to find the schematics and layout file that can be used to manufacture this board
+Navigate the hardware subdirectory to find the schematics, layout file, gerbers and BOM which can be used to manufacture this board
 
 #[Buy Adosia IoT Hardware](https://adosia.io)
 
