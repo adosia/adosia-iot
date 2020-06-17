@@ -4,7 +4,7 @@ Flash the [adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/
 
 Alternatively, you can purchase IoT hardware pre-flashed with the Adosia binary from the [Adosia IoT Store](https://adosia.io)
 
-You can support Adosia's open hardware initiatives by sending any amount of Cardano (ADA) to the following address:
+You can support Adosia open hardware development by sending any amount of ADA to the following Cardano address:
 **DdzFFzCqrhssyL8yoWBsM1NbhozhNu7yZ2vM355AauDt5MrC3kmzaJC8iwE8VC6MB4QmJ2p9diiGaM5wFYruE5gtsizFV4SyfQjUjyDX**
 
 
