@@ -4,9 +4,6 @@ The Adosia NINJA Capacitive Analog Soil Moisture Sensor design is part of Adosia
 
 The Adosia NINJA sensor is designed to be compatible with popular open hardware microcontroller boards including **Arduino**, **ESP8266**, **Raspberry Pi**, **Adosia IoT** and more.
 
-You can support Adosia open hardware development by sending any amount of ADA to the following Cardano address:
-**DdzFFzCqrhssyL8yoWBsM1NbhozhNu7yZ2vM355AauDt5MrC3kmzaJC8iwE8VC6MB4QmJ2p9diiGaM5wFYruE5gtsizFV4SyfQjUjyDX**
-
 
 <img src='./images/adosia_ninja.png' width='100px' />
 
@@ -44,6 +41,9 @@ You can support Adosia open hardware development by sending any amount of ADA to
 
 
 Navigate the hardware subdirectory to find the schematics, layout file, gerbers and BOM which can be used to manufacture this board
+
+You can support Adosia open hardware development by sending any amount of ADA to the following Cardano address:
+**DdzFFzCqrhssyL8yoWBsM1NbhozhNu7yZ2vM355AauDt5MrC3kmzaJC8iwE8VC6MB4QmJ2p9diiGaM5wFYruE5gtsizFV4SyfQjUjyDX**
 
 [Buy Adosia IoT Hardware](https://adosia.io)
 
