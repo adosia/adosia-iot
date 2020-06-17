@@ -45,6 +45,6 @@ You can support Adosia open hardware development by sending any amount of ADA to
 
 Navigate the hardware subdirectory to find the schematics, layout file, gerbers and BOM which can be used to manufacture this board
 
-#[Buy Adosia IoT Hardware](https://adosia.io)
+[Buy Adosia IoT Hardware](https://adosia.io)
 
 *NINJA was inspired by the open hardware capacitive soil moisture sensor by DFRobot
