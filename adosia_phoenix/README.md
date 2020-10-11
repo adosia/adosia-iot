@@ -18,7 +18,9 @@ You can support Adosia open hardware development by sending any amount of ADA to
 
 4. Update **lines 13 and 14** respectively with the **Network SSID** and **Password** for your WiFi Network (*WiFi login credentials are never transmitted to Adosia servers*)
 
-5. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware - you may need to set "Erase Flash" to "All Flash Contents"
+5. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware
+	- you may need to set "Erase Flash" to "Sketch + WiFi Settings"
+	- in extreme scenarios you may want to erase "All Flash Contents" - this will create a new device key
 
 6. When the upload completes, reset your board (recycle power) so the OTA update will take effect and download the latest binary from Adosia servers
 
