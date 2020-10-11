@@ -25,7 +25,7 @@ You can support Adosia open hardware development by sending any amount of ADA to
 
 If using an Adosia SPACE IO board, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded.  The board should now be ready to connect to the Adosia IoT Platform just as if you purchased it from the [Adosia IoT Store](https://adosia.io)
 
-***if the Arduino IDE doesn't recognize your board, you may need to [download the CH340 driver](https://wiki.wemos.cc/downloads)***
+***if the Arduino IDE doesn't recognize your board, you may need to [download the CH340 driver](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all)***
 
 
 
