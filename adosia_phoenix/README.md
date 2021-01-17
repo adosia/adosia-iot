@@ -35,7 +35,7 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 	
 <img src='./images/ide_settings.png' />
 
-5. Update **lines 14 and 15** respectively with the **Network SSID** and **Password** for *your WiFi Network* (*WiFi login credentials are never transmitted to Adosia servers*), and make sure **line 11** has the correct **iot_prefix** for the IO board you are using (default is **space_v2-2_fwv**), and u
+5. Update **lines 14 and 15** respectively with the **Network SSID** and **Password** for *your WiFi Network* (*WiFi login credentials are never transmitted to Adosia servers*), and make sure **line 11** has the correct **iot_prefix** for the IO board you are using (default is **space_v2-2_fwv**)
 
 <img src='./images/wifi_settings.png' />
 
