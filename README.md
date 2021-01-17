@@ -9,7 +9,7 @@ The next phase of development for the Adosia IoT Platform will leverage cryptocu
 **Learn More About the Adosia IoT Platform - see the [Adosia Learn Page](https://adosia.com/faq.php)**
 
 You can support Adosia open hardware development by sending any amount of ADA to the following Cardano address:
-**DdzFFzCqrhssyL8yoWBsM1NbhozhNu7yZ2vM355AauDt5MrC3kmzaJC8iwE8VC6MB4QmJ2p9diiGaM5wFYruE5gtsizFV4SyfQjUjyDX**
+**addr1qx0w683ua2hua30jhan3xfn5f473pjgh4vgxpx7mnuwfxddyah4yv7wh5dktyxs4cf7gf72pqa39twrp3qs56v0e6y4qupjq4t**
 
 
 # Dashboard View - Connected IoT Devices
