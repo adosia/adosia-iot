@@ -13,22 +13,39 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 
 # Steps to Download the Latest Adosia Binary
 
-1. Copy and paste the **[adosia_phoenix.ino](https://github.com/adosia/adosia-iot/blob/master/adosia_phoenix/adosia_phoenix.ino) sketch** into your **Arduino IDE**
+1. Download the Arduino IDE software appropriate for your operating system if you have not already done so. Simply visit the **[Arduino website](https://www.arduino.cc/en/software)**:
 
-2. Set your IDE settings to **Board** *LOLIN(WEMOS) D1 R2 & mini*, **Flash Size** *4M (3M spiffs)*, and **Upload Speed** of *115200 baud*
+<img src='./images/download_arduino_ide.png' />
 
-3. Make sure **line 11** has the correct **iot_prefix** for the IO board you are using (default is **space_v2-2_fwv**)
+2. Open the Arduino IDE and open a new sketch (select **File > New**) if needed. Next copy and paste the raw **[adosia_phoenix.ino](https://raw.githubusercontent.com/adosia/adosia-iot/master/adosia_phoenix/adosia_phoenix.ino) sketch** into your **Arduino IDE**
 
-4. Update **lines 14 and 15** respectively with the **Network SSID** and **Password** for your WiFi Network (*WiFi login credentials are never transmitted to Adosia servers*)
+<img src='./images/paste_phoenix_sketch.png' />
 
-5. Prepare the Arduino IDE - under Preferences set the Additional Boards Manager URLs to: **https://github.com/esp8266/Arduino/releases/download/2.6.1/package_esp8266com_index.json**
+3. Prepare the Arduino IDE - under **Arduino > Preferences** set the Additional Boards Manager URLs to: **https://github.com/esp8266/Arduino/releases/download/2.6.1/package_esp8266com_index.json**
+
+<img src='./images/prepare_ide.png' />
+
+4. Under **Tools**, set your IDE settings to the following:
+	- **Board:** *LOLIN(WEMOS) D1 R2 & mini*
+	- **Flash Size:** *4MB (FS:2MB OTA:!~019KB)*
+	- **Upload Speed:** *115200 baud*
+	- **Erase Flash:** *Sketch + WiFi Settings*
+	- **SSL Support:** *All SSL ciphers (most compatible)*
+	- **Port:** */dev/cu.usbserial...*
+	
+<img src='./images/ide_settings.png' />
+
+
+5. Update **lines 14 and 15** respectively with the **Network SSID** and **Password** for *your WiFi Network* (*WiFi login credentials are never transmitted to Adosia servers*), and make sure **line 11** has the correct **iot_prefix** for the IO board you are using (default is **space_v2-2_fwv**), and u
+
+<img src='./images/wifi_settings.png' />
 
 6. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware
-	- under **Tools > Erase Flash:**, first try flashing the board with the setting **Only Sketch** selected
-	- if the above does not work you may need to set **Erase Flash** to **Sketch + WiFi Settings**
-	- in extreme scenarios you may want to erase **All Flash Contents** - this will create a new device key
+	- in extreme scenarios you may need to set **Erase Flash** to *All Flash Contents* - this will create a new device key if one already exists
 
-7. When the upload completes, reset your board (recycle power) so the OTA update will take effect and download the latest binary from Adosia servers
+7. When the upload completes, your board should automatically reset. If the board does not reset manually reset your board (recycle power) to force the OTA update process to begin downloading the latest binary from Adosia servers
+
+8. Now you can proceed to connect your device to the Adosia IoT platform as show in this video:
 
 
 If using an Adosia SPACE IO board v2.3, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded.  The board should now be ready to connect to the Adosia IoT Platform just as if you purchased it from the [Adosia IoT Store](https://adosia.io)
