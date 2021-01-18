@@ -40,10 +40,12 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 
 <img src='./images/wifi_settings.png' />
 
-6. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware
+6. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware:
+	- if flashing an off-the-shelf baseboard (purchased from a 3rd-party) for the first time, set **Erase Flash** to *All Flash Contents*
 	- in extreme scenarios you may need to set **Erase Flash** to *All Flash Contents*
-	- erasing the flash will create a new device key if one already exists
-	- ***make sure to back up any Cardano private keys stored on this device BEFORE erasing the device flash!!!***
+	- erasing the flash will force a new device key to be created if one already exists
+	- erasing the flash will remove any previously stored private cryptographic keys / wallets
+	- ***make sure to back up any Cardano private wallet keys stored on this device BEFORE erasing the device flash!!!***
 	
 
 <img src='./images/upload_sketch.png' />
@@ -64,9 +66,9 @@ If using an Adosia SPACE IO board v2.3, the onboard LED will blink green 10 time
 
 # Troubleshooting
 
-With the release of Mac OSX Big Sur the upload tool throws an error when attempting to flash the board:
+With the release of Mac OS X Big Sur the upload tool throws an error when attempting to flash the board:
 
- - root cause is **upload.py** uses *esptool* which uses *pyserial* and *pyserial is not fully functional on Big Sur
+ - root cause is **upload.py** uses *esptool* which uses *pyserial* and *pyserial* is not fully functional on Big Sur
  
  - the workaround is to edit ~/Library/Arduino15/packages/esp8266/hardware/esp8266/2.6.1/tools/esptool/esptool.py (the full path of the file to edit is: /Users/<username>/Library/Arduino15/packages/esp8266/hardware/esp8266/2.6.1/tools/esptool/esptool.py)
  
