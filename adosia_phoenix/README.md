@@ -41,7 +41,10 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 <img src='./images/wifi_settings.png' />
 
 6. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware
-	- in extreme scenarios you may need to set **Erase Flash** to *All Flash Contents* - this will create a new device key if one already exists
+	- in extreme scenarios you may need to set **Erase Flash** to *All Flash Contents*
+	- erasing the flash will create a new device key if one already exists
+	- ***make sure to back up any Cardano private keys stored on this device BEFORE erasing the device flash!!!***
+	
 
 <img src='./images/upload_sketch.png' />
 
