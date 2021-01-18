@@ -1,6 +1,6 @@
 # Adosia Phoenix Connect Script for SPACE IO Boards
 
-Flash the [adosia_phoenix.ino Phoenix Connect script](https://github.com/adosia/adosia-iot/blob/master/adosia_phoenix/adosia_phoenix.ino) to your ESP8266-based **WEMOS D1 R2** or **WEMOS D1 Mini** WiFi baseboards to automatically download the latest Adosia binary to ready your own WiFi hardware for connecting to the Adosia IoT Platform.
+Flash the [adosia_phoenix.ino Phoenix Connect script](https://github.com/adosia/adosia-iot/blob/master/adosia_phoenix/adosia_phoenix.ino) to your ESP8266-based **LOLIN(WEMOS) D1 R2** or **LOLIN(WEMOS) D1 Mini** WiFi baseboards to automatically download the latest Adosia binary to ready your own WiFi hardware for connecting to the Adosia IoT Platform.
 
 You can also use the [Phoenix Connect script](https://github.com/adosia/adosia-iot/blob/master/adosia_phoenix/adosia_phoenix.ino) to reconnect an existing previously connected device which now may be unable to connect.
 
