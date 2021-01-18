@@ -21,7 +21,8 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 
 <img src='./images/paste_phoenix_sketch.png' />
 
-3. Prepare the Arduino IDE - under **Arduino > Preferences** set the Additional Boards Manager URLs to: **https://github.com/esp8266/Arduino/releases/download/2.6.1/package_esp8266com_index.json**
+3. Prepare the Arduino IDE - under **Arduino > Preferences** set the Additional Boards Manager URLs to:
+**https://github.com/esp8266/Arduino/releases/download/2.6.1/package_esp8266com_index.json**
 
 <img src='./images/prepare_ide.png' />
 
@@ -42,6 +43,8 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 6. Use the Arduino IDE to upload the sketch to your IoT WiFi hardware
 	- in extreme scenarios you may need to set **Erase Flash** to *All Flash Contents* - this will create a new device key if one already exists
 
+<img src='./images/upload_sketch.png' />
+
 7. When the upload completes, your board should automatically reset. If the board does not reset manually reset your board (recycle power) to force the OTA update process to begin downloading the latest binary from Adosia servers
 
 If using an Adosia SPACE IO board v2.3, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded. The board should now be ready to connect to the Adosia IoT Platform just as if you purchased it from the [Adosia IoT Store](https://adosia.io)
@@ -53,4 +56,19 @@ If using an Adosia SPACE IO board v2.3, the onboard LED will blink green 10 time
 
 # iot_prefix value to set based on Adosia IO Board
 
- - SPACE (or no IO board) => update iot_prefix on line 11 to **space_v2-2_fwv**
+ - SPACE (all versions, or no IO board) => update iot_prefix on line 11 to **space_v2-2_fwv**
+
+
+# Troubleshooting
+
+With the release of Mac OSX Big Sur the upload tool throws an error when attempting to flash the board:
+
+ - root cause is **upload.py** uses *esptool* which uses *pyserial* and *pyserial is not fully functional on Big Sur
+ 
+ - the workaround is to edit ~/Library/Arduino15/packages/esp8266/hardware/esp8266/2.6.1/tools/esptool/esptool.py (the full path of the file to edit is: /Users/<username>/Library/Arduino15/packages/esp8266/hardware/esp8266/2.6.1/tools/esptool/esptool.py)
+ 
+ - within that file comment out a block of code by adding **#** to the start of each line:
+ 
+ <img src='./images/code_block.png' />
+
+ - visit [this post](https://forum.arduino.cc/index.php?topic=702144.0) on the Arduino forum for more details
