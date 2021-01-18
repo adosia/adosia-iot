@@ -13,11 +13,11 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 
 # Steps to Download the Latest Adosia Binary
 
-1. Download the Arduino IDE software appropriate for your operating system if you have not already done so. Simply visit the **[Arduino website](https://www.arduino.cc/en/software)**:
+1. Visit the **[Arduino website](https://www.arduino.cc/en/software)** and download the Arduino IDE software appropriate for your operating system:
 
 <img src='./images/download_arduino_ide.png' />
 
-2. Open the Arduino IDE and open a new sketch (select **File > New**) if needed. Next copy and paste the raw **[adosia_phoenix.ino](https://raw.githubusercontent.com/adosia/adosia-iot/master/adosia_phoenix/adosia_phoenix.ino) sketch** into your **Arduino IDE**
+2. Open the Arduino IDE and open a new sketch (select **File > New**). Next copy and paste the raw **[adosia_phoenix.ino](https://raw.githubusercontent.com/adosia/adosia-iot/master/adosia_phoenix/adosia_phoenix.ino) sketch** into your **Arduino IDE**
 
 <img src='./images/paste_phoenix_sketch.png' />
 
