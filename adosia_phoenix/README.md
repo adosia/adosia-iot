@@ -44,13 +44,11 @@ Please support the Adosia IoT open hardware initiative by sending any amount of 
 
 7. When the upload completes, your board should automatically reset. If the board does not reset manually reset your board (recycle power) to force the OTA update process to begin downloading the latest binary from Adosia servers
 
-8. Now you can proceed to [Connect your device to the Adosia IoT platform](https://www.youtube.com/watch?v=2M2ukKbx40A)
-
-
-If using an Adosia SPACE IO board v2.3, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded.  The board should now be ready to connect to the Adosia IoT Platform just as if you purchased it from the [Adosia IoT Store](https://adosia.io)
+If using an Adosia SPACE IO board v2.3, the onboard LED will blink green 10 times once the baseboard successfully connects to your WiFi network, and will blink blue 6 times once the latest Adosia binary has been successfully downloaded. The board should now be ready to connect to the Adosia IoT Platform just as if you purchased it from the [Adosia IoT Store](https://adosia.io)
 
 ***if the Arduino IDE doesn't recognize your board, you may need to [download the CH340 driver](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all)***
 
+8. Now you can proceed to [Connect your device to the Adosia IoT platform](https://www.youtube.com/watch?v=2M2ukKbx40A)
 
 
 # iot_prefix value to set based on Adosia IO Board
